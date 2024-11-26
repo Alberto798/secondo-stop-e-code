@@ -9,6 +9,39 @@ export const insertPost = async (
     descrizione: string,
     valutazione: string
 ) => {
+
+    try {
+        await mongoose.connect(process.env.STRING_CONNECTION!, { dbName : "POST"});
+        const post = new Posts()
+        post.titolo = titolo;
+        post.anno = anno;
+        post.descrizione = descrizione;
+        post.valutazione = valutazione;
+     
+        return await post.save()
+      
+    } catch(err){
+        console.error(err)
+        
+    } finally {
+        mongoose.connection.close();
+    }
     
     
+}
+
+export const getAllPosts = async () => {
+    try {
+        await mongoose.connect(process.env.STRING_CONNECTION!, { dbName : "POST"});
+        
+        return await Posts.find()
+      
+    } catch(err){
+        console.error(err)
+        
+    } finally {
+        mongoose.connection.close();
+    }
+    
+
 }
