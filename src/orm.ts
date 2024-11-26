@@ -45,3 +45,19 @@ export const getAllPosts = async () => {
     
 
 }
+
+export const updatePost = async ( titolo: string, anno : number, descrizione: string, valutazione: string) => {
+    try {
+        await mongoose.connect(process.env.STRING_CONNECTION!, { dbName : "POST"});
+        
+        const post = await Posts.updateOne({
+            titolo,
+            anno,
+            descrizione,
+            valutazione
+        }, {new: true})
+} catch(err){
+    console.error(err)
+} finally{
+    mongoose.connection.close();
+}}

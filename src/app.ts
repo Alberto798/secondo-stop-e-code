@@ -13,3 +13,11 @@ console.log(insertPost)
 
 import { getAllPosts } from "./orm";
 getAllPosts()
+
+console.log(getAllPosts)
+
+
+import { updatePost } from "./orm";
+updatePost("deep Impact", 1998, "catastrofico", "Mediocre")
+
+console.log(updatePost)
