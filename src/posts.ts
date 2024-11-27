@@ -10,7 +10,7 @@ interface Posts {
 }
 
 const schemaPost = new mongoose.Schema<Posts>({
-    titolo: {type: 'string', required: true}, //se metto le graffe vengono aggiunte altre informazioni quando non ne basta una 
+    titolo: {type: String , required: true}, //se metto le graffe vengono aggiunte altre informazioni quando non ne basta una 
     anno: {type: Number, required: true},
     valutazione: {type: String, enum: ["Buona", "Mediocre", "Migliore"]}, //solo i valori "Buona", "Mediocre", "Migliore" sono ammessi
     descrizione: {type: String},

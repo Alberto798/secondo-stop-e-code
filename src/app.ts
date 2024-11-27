@@ -1,7 +1,6 @@
 import { Mongoose } from "mongoose";
 import { config } from "dotenv";
-
- config() 
+config() 
  
 
 import { insertPost } from "./orm";
@@ -17,7 +16,7 @@ getAllPosts()
 console.log(getAllPosts)
 
 
-import { updatePost } from "./orm";
-updatePost("deep Impact", 1998, "catastrofico", "Mediocre")
+import { addPost} from "./orm";
+addPost("deep Impact", 1998, "catastrofico", "Mediocre")
 
-console.log(updatePost)
+console.log(addPost)
