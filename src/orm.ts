@@ -4,7 +4,7 @@ import { Posts } from "./posts";
 
 const connect = process.env.STRING_CONNECTION!
 
-export const insertPost = async (
+export const insertPost = async (   //QUANDO IN UNA FUNZIONE METTO ASYNC LA FUNZIONE TORNA UNA PROMISE
 
     titolo: string,
     anno : number,
